@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace::std;
+
+double INPUT(string JENIS){
+    double NILAI;
+    cout<<"     MASUKKAN NILAI "<<JENIS<<" :"; cin>>NILAI;
+    return NILAI;
+}
+
+double INDEKS(float NILAI){
+ if(NILAI>100){cout<<"SALAH MEMASUKKAN";}
+else if(NILAI>=81 ){cout<<"     INDEKS NILAI: A";}
+else if(NILAI>=61 ){cout<<"     INDEKS NILAI: B";}
+else if(NILAI>=41 ){cout<<"     INDEKS NILAI: C";}
+else if(NILAI>=21 ){cout<<"     INDEKS NILAI: D";}
+else {cout<<"       INDEKS NILAI: E"; }
+}
+
+
+int main(){
+struct input{int NILAI[4];};
+struct nilai{float NAK;};
+
+cout<<endl<<endl;
+input ni;
+cout<<"  PROGRAM MENGHITUNG NILAI IPK"<<endl;
+cout<<"  ----------------------------"<<endl;
+
+ni.NILAI [0]= INPUT("UTS");
+ni.NILAI [1]= INPUT("UAS");
+ni.NILAI [2]= INPUT("TUGAS");
+ni.NILAI [3]= INPUT("ABSEN");
+
+cout<<"     NILAI UTS       ="<<ni.NILAI [0]*0.20 <<endl;
+cout<<"     NILAI UAS       ="<<ni.NILAI [1]*0.30 <<endl;
+cout<<"     NILAI TUGAS     ="<<ni.NILAI [2]*0.35 <<endl;
+cout<<"     NILAI KEHADIRAN ="<<ni.NILAI [3]*0.15 <<endl;
+cout<<"     _____________________+"<<endl;
+nilai na;
+na.NAK=ni.NILAI [0]*0.20+ni.NILAI [1]*0.30+ni.NILAI [2]*0.35+ni.NILAI [3]*0.15;
+cout<<"     NILAI AKHIR     : "<<na.NAK<<endl<<endl;
+INDEKS(na.NAK);
+cout<<endl<<endl;
+}
+
+
+
